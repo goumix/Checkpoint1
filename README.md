@@ -69,7 +69,7 @@ echo "- Memory used.........: $(free -m | grep Mem | awk '{print $3 " MB"}')" >>
 
 Utilise la commande suivante pour obtenir l'adresse IP du conteneur :
 ```bash
-lxc-info -n 127 | grep "IP:"
+lxc-info -n 127 | grep "IP:192.168.1.100"
 ```
 
 ## Partie 3 : Sécurité du conteneur et durcissement SSH
@@ -97,8 +97,7 @@ Utiliser une authentification par clés SSH au lieu de mots de passe.
 ## Partie 4 : Scripting Bash
 4.1 Script Bash pour connexion SSH :
 ```bash
-#!/bin/bash
-ssh -p 2222 wilder@<IP_du_conteneur>
+soltutions/ssh_connect.sh
 ```
 
 4.2 Analyse du script CPU :
