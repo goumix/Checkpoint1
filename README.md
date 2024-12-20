@@ -72,3 +72,25 @@ Utilise la commande suivante pour obtenir l'adresse IP du conteneur :
 lxc-info -n 127 | grep "IP:"
 ```
 
+## Partie 3 : Sécurité du conteneur et durcissement SSH
+3.1 Manipulations :
+
+Modifier le port SSH :
+
+Édite /etc/ssh/sshd_config :
+```bash
+sed -i 's/#Port 22/Port 2222/' /etc/ssh/sshd_config
+systemctl restart sshd
+```
+
+Bloquer tous les ports à l’aide d’un pare-feu logiciel (UFW) :
+
+```bash
+ufw default deny incoming
+ufw allow 2222/tcp
+ufw enable
+```
+
+3.2 Autre moyen d’augmenter la sécurité :
+
+Utiliser une authentification par clés SSH au lieu de mots de passe.
