@@ -144,3 +144,18 @@ Intégration continue (CI) : Test et validation automatique de chaque modificati
 Provisionning : Déploiement automatisé de ressources.
 
 
+## Partie 6 : Administration système et réseau
+6.1 Outil de surveillance réseau
+
+Outil utilisé : iftop.
+
+Commandes :
+```bash
+Copy code
+apt install iftop
+iftop -i eth0
+```
+
+Rapport :
+Analyse du trafic entrant et sortant.
+Liste des adresses IP et bande passante consommée.
